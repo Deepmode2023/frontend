@@ -8,4 +8,5 @@ RUN groupadd -r frontend && useradd -r -g frontend frontend
 RUN chown -R frontend:frontend /usr/share/nginx/html
 USER frontend
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["./command.sh"]
+

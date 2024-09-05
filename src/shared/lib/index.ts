@@ -1,1 +1,1 @@
-export { throttle } from "./helpers/optimizations/throttle";
+export { throttle } from "./utils/optimizations/throttle";

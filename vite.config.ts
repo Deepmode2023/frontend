@@ -18,6 +18,8 @@ export default defineConfig({
       shared: path.resolve(__dirname, "./src/shared"),
       /* @ts-ignore */
       envirements: path.resolve(__dirname, "./src/app/envirements"),
+      /* @ts-ignore */
+      entities: path.resolve(__dirname, "./src/entities"),
     },
     extensions: [".js", ".ts", ".jsx", ".tsx"],
   },

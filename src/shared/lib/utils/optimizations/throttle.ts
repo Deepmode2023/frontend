@@ -11,6 +11,7 @@ function throttle(callback: Function, timmer: number) {
       }, timmer);
     } else {
       clearInterval(timerID);
+      /* @ts-ignore */
       timerID = setTimeout(() => {
         callback.apply(context, args);
         lastRun = Date.now();

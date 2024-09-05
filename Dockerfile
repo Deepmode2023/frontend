@@ -6,6 +6,8 @@ RUN bun install --frozen-lockfile
 
 COPY . .
 
+COPY docker-cmd.sh .
+
 VOLUME [ "/core/src" ]
 
 RUN groupadd -r deepmode && useradd -r -g deepmode deepmode
@@ -14,4 +16,4 @@ USER deepmode
 
 EXPOSE 8001
 
-CMD ["bun", "run", "dev", "--port", "8001"]
+CMD ["./docker-cmd.sh"]
