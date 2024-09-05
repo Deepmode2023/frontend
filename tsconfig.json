@@ -19,7 +19,7 @@
       "shared/*": ["shared/*"],
       "envirements/*": ["app/envirements/*"],
       "entities/*": ["entities/*"],
-      "@": ["./"]
+      "@/*": ["./*"]
     }
   }
 }

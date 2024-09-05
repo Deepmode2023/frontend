@@ -1,6 +1,6 @@
 import { LinkedList, ToStringCallback } from "../linked-list/linked-list";
 import { CompareFunctionType } from "../comparator";
-import { eventTimeoutBus } from "../../eventBus/eventTimeoutBus";
+import { eventTimeoutBus } from "../../eventBus/event-timeout-bus";
 import { v4 as uuidv4 } from "uuid";
 
 type UniqKeyType = { uniqKey: ReturnType<typeof uuidv4> };

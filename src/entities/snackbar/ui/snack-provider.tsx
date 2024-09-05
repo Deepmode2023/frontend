@@ -1,6 +1,6 @@
 import { SnackbarProvider } from "notistack";
 import { PropsWithChildren, Fragment, lazy } from "react";
-import { useSnackMessage } from "../lib/hooks/useSnackMessage";
+import { useSnackMessage } from "../lib/hooks/use-snack-message";
 import { Message } from "./message";
 import { ICONS } from "../config/constant";
 

@@ -27,8 +27,8 @@ import {
 } from "./lib/utils/grpc";
 
 import { SessionStorage } from "./lib/utils/session-storage";
-import { AnimationFrame } from "./lib/utils/animateFramer";
-import { eventTimeoutBus } from "./lib/utils/eventBus/eventTimeoutBus";
+import { AnimationFrame } from "./lib/utils/animate-framer";
+import { eventTimeoutBus } from "./lib/utils/eventBus/event-timeout-bus";
 import { EventBus } from "./lib/utils/eventBus/eventBus";
 import { QueueWithTimeout } from "./lib/utils/data-structure/queue/queue-with-timeout";
 

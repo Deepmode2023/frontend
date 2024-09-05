@@ -1,17 +1,16 @@
-import { PropsWithChildren, useEffect } from "react";
+import { PropsWithChildren, Fragment } from "react";
 import { MobileProvider } from "./context/mobile";
-import { SnackProvider, DisplayToastAdapter } from "entities/snackbar";
+import { SnackProvider } from "entities/snackbar";
+import { RouterProvider } from "react-router-dom";
+import { routes } from "./routes";
 
 export const Providers = ({ children }: PropsWithChildren) => {
-  useEffect(() => {
-    DisplayToastAdapter(
-      { message: "HELLO", condition: "success", time: 5000 },
-      5000
-    );
-  }, []);
   return (
-    <SnackProvider>
-      <MobileProvider>{children}</MobileProvider>
-    </SnackProvider>
+    <Fragment>
+      <RouterProvider router={routes} />
+      <SnackProvider>
+        <MobileProvider>{children}</MobileProvider>
+      </SnackProvider>
+    </Fragment>
   );
 };
