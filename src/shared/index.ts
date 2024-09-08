@@ -56,6 +56,12 @@ import type {
   ResponseUserType,
   IResponseCreateUser,
 } from "./model";
+export { isEqual } from "./lib/utils/comperator";
+export {
+  defaultRoute,
+  type DefaultRouteObjectType,
+  type ChildrenRouteType,
+} from "./lib/utils/generator-route";
 
 import { TIME_IN_MS } from "./config/time";
 import { RESPONSE_STATUS } from "./config/status";
