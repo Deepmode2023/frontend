@@ -1,4 +1,4 @@
-import { ISVGIconProps } from "../../../lib/interfaces/assets";
+import { ISVGIconProps } from "../../../model/assets";
 import { motion } from "framer-motion";
 import { animateProps } from "./animate";
 

@@ -1,4 +1,4 @@
-import { ISVGIconProps } from "../../../../lib/interfaces/assets";
+import { ISVGIconProps } from "../../../../model/assets";
 
 export const UpArrowSvg = ({
   width = 24,

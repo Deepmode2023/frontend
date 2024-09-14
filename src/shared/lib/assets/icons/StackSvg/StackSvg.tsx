@@ -1,4 +1,4 @@
-import { ISVGStackProps } from "../../../../lib/interfaces/assets";
+import { ISVGStackProps } from "../../../../model/assets";
 import { animateProps } from "../animate";
 import { motion } from "framer-motion";
 import { cls } from "shared";

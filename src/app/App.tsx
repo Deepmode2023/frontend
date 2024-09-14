@@ -1,34 +1,42 @@
 import { Providers } from "./providers";
-import { Fragment, useMemo } from "react";
-import { Route } from "react-router-dom";
-import { AuthStore } from "shared/lib/store";
-import { createSelectorHooks } from "auto-zustand-selectors-hook";
-import { defaultRoutes } from "./routes";
-import { defaultRoute } from "shared";
+import { Outlet, Route, RouteObject, Link } from "react-router-dom";
 import { UnExistingPage, ErrorBoundary } from "@/pages";
 
-const authStore = createSelectorHooks(AuthStore);
+import {
+  BrowserRouter as Router,
+  Routes,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import { AuthLayout } from "features/auth";
+import { useEffect, useState } from "react";
 
-import { BrowserRouter as Router, Routes } from "react-router-dom";
+const MainPage = () => {
+  return (
+    <>
+      <div>
+        TOP LEVEL LAYOUT <Outlet />
+      </div>
+      <Link to="/help">CLICK TO HELP</Link>
+    </>
+  );
+};
 
 const App = () => {
-  const extraRoutes = authStore().routes;
-
-  const memoizedExtraRoutes = useMemo(() => {
-    return extraRoutes.map((child, itter) => (
-      <Fragment key={itter}>{defaultRoute(child)}</Fragment>
-    ));
-  }, [extraRoutes]);
+  const [routes, setRoutes] = useState<any>([]);
 
   return (
     <ErrorBoundary>
-      <Router>
+      <RouterProvider router={createBrowserRouter(routes)} />
+      {/* <Router>
         <Routes>
-          {defaultRoutes}
-          {memoizedExtraRoutes}
+          <Route path="/" element={<AuthLayout />}>
+            {[]}
+          </Route>
           <Route path="*" element={<UnExistingPage />} />
         </Routes>
-      </Router>
+      </Router> */}
+
       <Providers />
     </ErrorBoundary>
   );

@@ -1,4 +1,4 @@
-import { ISVGIconProps } from "../../../lib/interfaces/assets";
+import { ISVGIconProps } from "../../../model/assets";
 
 export const CloseSvg = ({ width = 24, height = 24, fill }: ISVGIconProps) => {
   return (

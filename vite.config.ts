@@ -15,6 +15,7 @@ export default defineConfig({
       shared: path.resolve(__dirname, "./src/shared"),
       envirements: path.resolve(__dirname, "./src/app/envirements"),
       entities: path.resolve(__dirname, "./src/entities"),
+      features: path.resolve(__dirname, "./src/features"),
     },
     extensions: [".js", ".ts", ".jsx", ".tsx"],
   },

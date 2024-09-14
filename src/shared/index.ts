@@ -57,11 +57,7 @@ import type {
   IResponseCreateUser,
 } from "./model";
 export { isEqual } from "./lib/utils/comperator";
-export {
-  defaultRoute,
-  type DefaultRouteObjectType,
-  type ChildrenRouteType,
-} from "./lib/utils/generator-route";
+export { makeHeader } from "./lib/utils/header";
 
 import { TIME_IN_MS } from "./config/time";
 import { RESPONSE_STATUS } from "./config/status";

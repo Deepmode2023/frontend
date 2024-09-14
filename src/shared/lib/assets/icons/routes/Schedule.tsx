@@ -1,5 +1,5 @@
 import React from "react";
-import { ISVGIconProps } from "../../../../lib/interfaces/assets";
+import { ISVGIconProps } from "../../../../model/assets";
 import { animateProps } from "../animate";
 import { motion } from "framer-motion";
 
