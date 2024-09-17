@@ -2,11 +2,12 @@ import { ReactNode } from "react";
 import type { RouteStoreObjectType } from "../../model/store";
 import { v4 } from "uuid";
 
-type GetDefaultRoutesParamsType = {
+export type GetDefaultRoutesParamsType = {
   ErrorBoundaryLayout: ReactNode;
   UnProtectedLayout: ReactNode;
   ProtectedLayout: ReactNode;
   UnExistingPage: ReactNode;
+  AuthPage: ReactNode;
 };
 
 const getDefaultRoutes: (
@@ -16,6 +17,7 @@ const getDefaultRoutes: (
   UnProtectedLayout,
   UnExistingPage,
   ProtectedLayout,
+  AuthPage,
 }) => [
   {
     path: "/",
@@ -24,7 +26,7 @@ const getDefaultRoutes: (
     uniqKey: v4(),
     children: [
       {
-        index: false,
+        path: "prt",
         element: ProtectedLayout,
         uniqKey: v4(),
         isProtected: true,
@@ -34,6 +36,14 @@ const getDefaultRoutes: (
         element: UnProtectedLayout,
         uniqKey: v4(),
         isProtected: false,
+        children: [
+          {
+            path: "auth",
+            isProtected: false,
+            uniqKey: v4(),
+            element: AuthPage,
+          },
+        ],
       },
     ],
   },

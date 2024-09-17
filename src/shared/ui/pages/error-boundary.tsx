@@ -1,5 +1,6 @@
-import { Component, ErrorInfo, PropsWithChildren } from "react";
+import { Component, ErrorInfo, Fragment, PropsWithChildren } from "react";
 import ErrorPage from "./error";
+import { Outlet, useOutlet } from "react-router-dom";
 
 interface IErrorBoundary {
   hasError: boolean;
@@ -27,7 +28,11 @@ class ErrorBoundary extends Component<ErrorBoundaryProps, IErrorBoundary> {
       return <ErrorPage error={this.state.error} />;
     }
 
-    return this.props.children;
+    return (
+      <Fragment>
+        {this.props.children} <Outlet />
+      </Fragment>
+    );
   }
 }
 

@@ -1,2 +1,6 @@
-export { useRoutesStore } from "./store/routes";
-export { getDefaultRoutes } from "./lib/constant/default-routes";
+export {
+  getDefaultRoutes,
+  type GetDefaultRoutesParamsType,
+} from "./lib/utils/default-routes";
+export { makeRouteHeader } from "./lib/utils/format-header";
+export { useRoutesStore } from "./lib/hooks/useRoutesStore";

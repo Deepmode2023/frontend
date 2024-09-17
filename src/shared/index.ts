@@ -14,6 +14,8 @@ import type {
   CommonFieldResponseType,
 } from "./lib/utils/grpc";
 
+export { isObject, isArray } from "./lib/utils/checking-type";
+
 import {
   GRPC_STATUS_ENUM,
   oneOf,
@@ -167,3 +169,9 @@ export type {
   ResponseUserType,
   IResponseCreateUser,
 };
+
+/* LAZY */
+import { lazy } from "react";
+export const ErrorBoundary = lazy(() => import("./ui/pages/error-boundary"));
+export const LoaderPage = lazy(() => import("./ui/pages/page-loader"));
+export const UnExistingPage = lazy(() => import("./ui/pages/404"));

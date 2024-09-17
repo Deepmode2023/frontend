@@ -2,8 +2,9 @@ import { RouteObject } from "react-router-dom";
 
 declare global {}
 
-type RouteStoreObjectType = RouteObject & {
+type RouteStoreObjectType = Omit<RouteObject, "children" | "index"> & {
   isProtected: boolean;
+  index?: boolean;
   uniqKey: number | string;
   children?: Array<RouteStoreObjectType>;
 };
@@ -22,6 +23,7 @@ type RoutesStoreStateType = {
 
 type RoutesStoreActionType = {
   addRoute: (route: RouteStoreObjectType) => void;
+  addRoutes: (routes: Array<RouteStoreObjectType>) => void;
 };
 type RoutesStoreType = RoutesStoreActionType & RoutesStoreStateType;
 

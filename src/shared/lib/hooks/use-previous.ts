@@ -9,18 +9,18 @@ const usePrevious = <T>(value: T) => {
 
   const current = ref.current.value;
 
-  const isCompareValues = (): boolean => {
-    return isEqual(current, ref.current.prev);
+  const isNotEqual = (): boolean => {
+    return !isEqual(current, ref.current.prev);
   };
 
-  if (isEqual(value, current)) {
+  if (!isEqual(value, current)) {
     ref.current = {
       value: value,
       prev: current,
     };
   }
 
-  return { previous: ref.current.prev, isCompareValues };
+  return { previous: ref.current.prev, isNotEqual };
 };
 
 export { usePrevious };

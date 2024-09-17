@@ -1,0 +1,23 @@
+// Bun Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing 'getPath' with diffecult mock object ... & existing the key inside deeply array with key 1`] = `"Africa.Egypt.Cairo.[0]"`;
+
+exports[`Testing 'getPath' with diffecult mock object ... & pass without key 1`] = `"Africa.Egypt.Cairo.[0]"`;
+
+exports[`Testing 'getPaths' with diffecult mock object ... & existing key in mock data and path with key 1`] = `
+[
+  "Cairo.[0].street",
+  "Cairo.[1].street",
+  "Alexandria.[0].street",
+  "Alexandria.[1].street",
+]
+`;
+
+exports[`Testing 'getPaths' with diffecult mock object ... & existing key in mock data and path without key 1`] = `
+[
+  "Cairo.[0]",
+  "Cairo.[1]",
+  "Alexandria.[0]",
+  "Alexandria.[1]",
+]
+`;
