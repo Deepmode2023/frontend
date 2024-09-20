@@ -1,14 +1,21 @@
 import React, { PropsWithChildren } from "react";
-import { RoutesProvider } from "features/routes";
 import { Link } from "react-router-dom";
+import { Outlet } from "react-router-dom";
+
+const TestComponent = ({ children }: PropsWithChildren) => {
+  console.log("COMPONENTS RENDER ");
+  return <div>TEST COMPONENT WITH CHILDREN {children}</div>;
+};
 
 const MainPage = ({ children }: PropsWithChildren) => {
+  console.log("HELLO >>> MAINPAGE");
   return (
-    <RoutesProvider>
-      <div>Hello main</div>
+    <div>
       {children}
-      <Link to="/unprt/auth">GO TO THE PROTECTED ROUTE</Link>
-    </RoutesProvider>
+      Outlet : <Outlet />
+      <Link to="/repetition">GO TO THE PROTECTED ROUTE</Link>
+      <TestComponent>{children}</TestComponent>
+    </div>
   );
 };
 

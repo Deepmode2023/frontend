@@ -5,25 +5,23 @@ declare global {}
 type RouteStoreObjectType = Omit<RouteObject, "children" | "index"> & {
   isProtected: boolean;
   index?: boolean;
-  uniqKey: number | string;
   children?: Array<RouteStoreObjectType>;
 };
 
 type RegistredRouteStoreObjectType = {
   isProtected: boolean;
-  uniqKey: number | string;
   header: string;
   path: string | "index";
+  children?: Array<RegistredRouteStoreObjectType>;
 };
 
 type RoutesStoreStateType = {
-  routes: Array<RouteObject>;
   registredRoutes: Array<RegistredRouteStoreObjectType>;
 };
 
 type RoutesStoreActionType = {
-  addRoute: (route: RouteStoreObjectType) => void;
-  addRoutes: (routes: Array<RouteStoreObjectType>) => void;
+  addRegisteredRoute: (route: RouteStoreObjectType) => void;
+  addRegisteredRoutes: (routes: Array<RouteStoreObjectType>) => void;
 };
 type RoutesStoreType = RoutesStoreActionType & RoutesStoreStateType;
 
@@ -33,5 +31,4 @@ export type {
   RegistredRouteStoreObjectType,
   RoutesStoreStateType,
   RoutesStoreActionType,
-  RoutesStoreType,
 };

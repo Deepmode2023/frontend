@@ -16,6 +16,7 @@ export default defineConfig({
       envirements: path.resolve(__dirname, "./src/app/envirements"),
       entities: path.resolve(__dirname, "./src/entities"),
       features: path.resolve(__dirname, "./src/features"),
+      widget: path.resolve(__dirname, "./src/widget"),
     },
     extensions: [".js", ".ts", ".jsx", ".tsx"],
   },

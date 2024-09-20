@@ -1,12 +1,11 @@
 import { Providers } from "./providers";
-import { Outlet, Link } from "react-router-dom";
-import { MainPage } from "@/pages";
+import { AppPage } from "@/pages";
 
 const App = () => {
   return (
-    <MainPage>
+    <AppPage>
       <Providers />
-    </MainPage>
+    </AppPage>
   );
 };
 

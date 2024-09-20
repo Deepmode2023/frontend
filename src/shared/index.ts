@@ -169,9 +169,3 @@ export type {
   ResponseUserType,
   IResponseCreateUser,
 };
-
-/* LAZY */
-import { lazy } from "react";
-export const ErrorBoundary = lazy(() => import("./ui/pages/error-boundary"));
-export const LoaderPage = lazy(() => import("./ui/pages/page-loader"));
-export const UnExistingPage = lazy(() => import("./ui/pages/404"));
