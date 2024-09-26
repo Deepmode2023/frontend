@@ -1,6 +1,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
-import { IAuthStore } from "../model/user";
+import { IAuthStore } from "../../model/user";
 
 export const useAuthStore = create<IAuthStore>()(
   devtools(

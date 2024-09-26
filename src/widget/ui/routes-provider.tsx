@@ -24,6 +24,14 @@ export const RoutesProvider = ({
           path="repetition"
           element={<ProtectedRoute>{RepetitionPage}</ProtectedRoute>}
         />
+        <Route
+          path="test1"
+          element={
+            <ProtectedRoute>
+              <div>TEST1</div>
+            </ProtectedRoute>
+          }
+        />
       </Route>
       <Route path="/signin" element={AuthPage} />
       <Route path="*" element={UnExistingPage} />

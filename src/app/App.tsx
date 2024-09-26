@@ -3,9 +3,9 @@ import { AppPage } from "@/pages";
 
 const App = () => {
   return (
-    <AppPage>
-      <Providers />
-    </AppPage>
+    <Providers>
+      <AppPage />
+    </Providers>
   );
 };
 

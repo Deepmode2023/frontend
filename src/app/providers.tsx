@@ -1,12 +1,14 @@
 import { PropsWithChildren, useEffect } from "react";
 import { MobileProvider } from "./context/mobile";
 import { SnackProvider } from "entities/snackbar";
-import { createSelectorHooks } from "auto-zustand-selectors-hook";
+import { AuthNavbarProvider } from "entities/auth";
 
 export const Providers = ({ children }: PropsWithChildren) => {
   return (
-    <SnackProvider>
-      <MobileProvider>{children}</MobileProvider>
-    </SnackProvider>
+    <AuthNavbarProvider>
+      <SnackProvider>
+        <MobileProvider>{children}</MobileProvider>
+      </SnackProvider>
+    </AuthNavbarProvider>
   );
 };
