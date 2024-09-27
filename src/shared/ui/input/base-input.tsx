@@ -1,22 +1,14 @@
-import TextField, { BaseTextFieldProps } from "@mui/material/TextField";
-import React, { MutableRefObject, useRef, useEffect } from "react";
+import TextField, { StandardTextFieldProps } from "@mui/material/TextField";
 import { UseFormRegisterReturn, FieldError } from "react-hook-form";
-import { motion, AnimatePresence, MotionConfigProps } from "framer-motion";
-import Badge from "@mui/material/Badge";
+import { motion, AnimatePresence } from "framer-motion";
 
-interface IBaseInput<TNameField extends string> extends BaseTextFieldProps {
+export interface IBaseInput<TNameField extends string>
+  extends StandardTextFieldProps {
   registerOptions: UseFormRegisterReturn<TNameField>;
   isRequired?: boolean;
   label: string;
   formError: FieldError | undefined;
 }
-
-const spring = {
-  type: "spring",
-  damping: 10,
-  stiffness: 100,
-  duration: 0.5,
-};
 
 const variants = {
   initial: {
@@ -43,22 +35,14 @@ function BaseInput<TNameField extends string>({
   ...inputProps
 }: IBaseInput<TNameField>) {
   return (
-    <div test-id="base_input_id" className="flex flex-col gap-1">
-      <Badge
-        color="error"
-        invisible={false}
-        badgeContent={"Req"}
-        anchorOrigin={{ vertical: "bottom", horizontal: "right" }}
+    <div data-testid="base_input_id" className="flex flex-col gap-1">
+      <TextField
+        id="input-with-sx"
+        label={label}
         variant="standard"
-      >
-        <TextField
-          {...registerOptions}
-          {...inputProps}
-          label={label}
-          variant="standard"
-          error={formError?.message ? true : false}
-        />
-      </Badge>
+        {...registerOptions}
+        {...inputProps}
+      />
       <AnimatePresence>
         {formError?.message && (
           <motion.span
@@ -67,7 +51,12 @@ function BaseInput<TNameField extends string>({
             animate={"active"}
             exit={"inactive"}
             className="text-red-600"
-            transition={spring}
+            transition={{
+              type: "spring",
+              damping: 10,
+              stiffness: 100,
+              duration: 0.5,
+            }}
           >
             {formError.message}
           </motion.span>

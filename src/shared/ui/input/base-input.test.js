@@ -8,7 +8,9 @@ describe("Testing BaseInput component", () => {
   beforeEach(() => {
     component = render(<BaseInput {...defaultProps} />);
   });
+
   test("... & fs test with label props", () => {
-    expect(screen(component)).toBe("Hello");
+    const { getByTestId, debug } = component;
+    expect(getByTestId("base_input_id")).toBe("Hello");
   });
 });

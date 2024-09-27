@@ -1,4 +1,7 @@
 [test]
-
+preload = "./happydom.ts"
 # always enable coverage
 coverage = true
+
+
+
