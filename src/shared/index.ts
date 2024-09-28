@@ -15,6 +15,7 @@ import type {
 } from "./lib/utils/grpc";
 
 export { isObject, isArray } from "./lib/utils/checking-type";
+export { PasswordInput } from "./ui/input/password-input";
 
 import {
   GRPC_STATUS_ENUM,

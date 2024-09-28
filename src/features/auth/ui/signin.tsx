@@ -1,6 +1,6 @@
 import { PropsWithChildren, useRef } from "react";
 import { FormControl, InputLabel, Input, FormHelperText } from "@mui/material";
-import { BaseInput, BaseButton, ButtonWithLoader } from "shared/index";
+import { BaseInput, BaseButton, ButtonWithLoader, PasswordInput } from "shared/index";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 
@@ -45,7 +45,7 @@ const SignInForm = (props: PropsWithChildren) => {
         fullWidth
       />
 
-      <BaseInput<"password">
+      <PasswordInput
         registerOptions={register("password", {
           required: { value: true, message: "Ganstasheet man..." },
           pattern: { value: /\d+/, message: "Ganstasheet man..." },
@@ -53,7 +53,6 @@ const SignInForm = (props: PropsWithChildren) => {
         label="Password"
         formError={errors.username}
         fullWidth
-        type="password"
       />
       <ButtonWithLoader progressPosition="end" params={{}} onClick={onClickPop}>
         Hello
