@@ -2,7 +2,8 @@ import Button, { ButtonProps } from "@mui/material/Button";
 import { CircularProgressProps } from "@mui/material/CircularProgress";
 import { useWaitingAction } from "../../lib/hooks/use-waiting-action";
 import { Progress } from "../progress";
-import { useMemo } from "react";
+import { ReactNode, useMemo } from "react";
+import { BaseButton } from "./base-button";
 
 interface IButtonWithLoadingProps<TPromiseParams, TPromiseReturn>
   extends Omit<ButtonProps, "onClick" | "endIcon" | "startIcon"> {
@@ -10,6 +11,7 @@ interface IButtonWithLoadingProps<TPromiseParams, TPromiseReturn>
   onClick: (params: TPromiseParams) => Promise<TPromiseReturn>;
   progressProps?: CircularProgressProps;
   progressPosition?: "end" | "start";
+  children?: ReactNode;
 }
 
 export const ButtonWithLoader = <TPromiseParams, TPromiseReturn>({
@@ -31,7 +33,7 @@ export const ButtonWithLoader = <TPromiseParams, TPromiseReturn>({
   }, [loading, progressProps]);
 
   return (
-    <Button
+    <BaseButton
       {...props}
       onClick={() => onActionWithLoading(params)}
       startIcon={progressPosition === "start" ? ProgressInstance : null}
