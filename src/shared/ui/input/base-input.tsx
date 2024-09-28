@@ -35,7 +35,7 @@ function BaseInput<TNameField extends string>({
   ...inputProps
 }: IBaseInput<TNameField>) {
   return (
-    <div data-testid="base_input_id" className="flex flex-col gap-1">
+    <div data-testid="base_input" className="flex flex-col gap-1">
       <TextField
         id="input-with-sx"
         label={label}
@@ -51,6 +51,7 @@ function BaseInput<TNameField extends string>({
             animate={"active"}
             exit={"inactive"}
             className="text-red-600"
+            data-testid="base_input_message"
             transition={{
               type: "spring",
               damping: 10,

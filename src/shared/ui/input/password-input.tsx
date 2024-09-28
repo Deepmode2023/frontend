@@ -14,6 +14,7 @@ const PasswordInput = (props: IBaseInput<"password">) => {
           endAdornment: (
             <InputAdornment
               position="start"
+              data-testid="password_input_icon"
               onClick={() => {
                 setIsVisible((prev) => !prev);
               }}
