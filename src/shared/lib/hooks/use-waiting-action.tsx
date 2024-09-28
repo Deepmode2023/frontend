@@ -1,20 +1,17 @@
-import { useState, useCallback } from "react";
+import { useState } from "react";
 
 export const useWaitingAction = <TPromiseParams, TPromiseReturn>(
   action: (params: TPromiseParams) => Promise<TPromiseReturn>
 ) => {
   const [loading, setLoading] = useState(false);
 
-  const onAction = useCallback(
-    async (params: TPromiseParams) => {
-      setLoading(true);
-      const result = await action(params);
-      setLoading(false);
+  const onAction = async (params: TPromiseParams) => {
+    setLoading(true);
+    const result = await action(params);
+    setLoading(false);
 
-      return result;
-    },
-    [action]
-  );
+    return result;
+  };
 
   return { loading, onAction };
 };

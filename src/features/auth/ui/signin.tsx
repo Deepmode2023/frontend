@@ -1,6 +1,6 @@
 import { PropsWithChildren, useRef } from "react";
 import { FormControl, InputLabel, Input, FormHelperText } from "@mui/material";
-import { BaseInput, PasswordInput } from "shared/index";
+import { BaseInput, BaseButton, ButtonWithLoader, PasswordInput } from "shared/index";
 import { useForm, SubmitHandler } from "react-hook-form";
 import TextField from "@mui/material/TextField";
 
@@ -17,6 +17,14 @@ const SignInForm = (props: PropsWithChildren) => {
   } = useForm<ISignInForm>({
     defaultValues: { username: "defaultValue", password: "" },
   });
+
+  const onClickPop = async () => {
+    await new Promise((res) => {
+      setTimeout(() => {
+        res("");
+      }, 5000);
+    });
+  };
 
   const onSubmit: SubmitHandler<ISignInForm> = (data) => {
     alert(JSON.stringify(data));
@@ -46,8 +54,9 @@ const SignInForm = (props: PropsWithChildren) => {
         formError={errors.username}
         fullWidth
       />
-      <input {...register("password", { required: true })} />
-      <input type="submit" />
+      <ButtonWithLoader progressPosition="end" params={{}} onClick={onClickPop}>
+        Hello
+      </ButtonWithLoader>
     </form>
   );
 };

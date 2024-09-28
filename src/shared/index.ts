@@ -111,6 +111,7 @@ export {
   ButtonWithLoader,
   SelectWithPlaceholder,
 };
+export { BaseButton } from "./ui/button/base-button";
 /* HOOKS */
 export { useStepper, usePrevious };
 /* FUNCTION */
