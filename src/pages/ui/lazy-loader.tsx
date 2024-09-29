@@ -9,7 +9,7 @@ import {
 } from "react";
 
 const LazyComponentMap: Record<LazyComponentMapType, () => Promise<any>> = {
-  AUTHORIZATION_PAGE: () => import("./authorization"),
+  AUTHORIZATION_PAGE: () => import("./authorization.mobile"),
   ERROR_BOUNDARY_PAGE: () => import("./error-boundary"),
   MAIN_PAGE: () => import("./main"),
   REPETITION_PAGE: () => import("./repetition"),

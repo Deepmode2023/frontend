@@ -14,8 +14,9 @@ export const Progress = (props: CircularProgressProps) => (
       </defs>
     </svg>
     <CircularProgress
+      {...props}
       sx={{ "svg circle": { stroke: "url(#my_gradient)" } }}
-      size={20}
+      size={props.size ?? 20}
       thickness={4}
     />
   </React.Fragment>
