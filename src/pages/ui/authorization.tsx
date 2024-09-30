@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, Suspense } from "react";
+import { useContext, Suspense } from "react";
 import { LogoDeepmode } from "shared/lib/assets/icons/logo-deepmode";
 import { AuthNavbar, SignInForm } from "features/auth";
 import { AuthNavbarContext } from "entities/auth";
