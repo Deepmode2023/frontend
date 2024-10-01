@@ -33,7 +33,7 @@ export const RoutesProvider = ({
           }
         />
       </Route>
-      <Route path="/signin" element={AuthPage} />
+      <Route path="/auth" element={AuthPage} />
       <Route path="*" element={UnExistingPage} />
     </Routes>
   </ErrorBoundary>

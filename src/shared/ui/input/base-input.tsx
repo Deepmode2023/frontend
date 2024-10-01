@@ -37,7 +37,6 @@ function BaseInput<TNameField extends string>({
   return (
     <div data-testid="base_input" className="flex flex-col gap-1">
       <TextField
-        id="input-with-sx"
         label={label}
         variant="standard"
         {...registerOptions}
