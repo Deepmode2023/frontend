@@ -171,3 +171,9 @@ export type {
   ResponseUserType,
   IResponseCreateUser,
 };
+
+// ANIMATION CONFIG
+export {
+  springConfig,
+  inertiaConfig,
+} from "./config/animation/transition-config";
