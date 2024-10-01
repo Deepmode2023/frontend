@@ -1,7 +1,7 @@
-import { SESSIONSTORAGE_TOKEN_PK } from "../../config/global";
+// import { SESSIONSTORAGE_TOKEN_PK } from "../../config/global";
 
 export class SessionStorage {
-  pkToken = SESSIONSTORAGE_TOKEN_PK;
+  pkToken = "SESSIONSTORAGE_TOKEN_PK";
   store: Storage;
   constructor() {
     const storeInstance = window?.localStorage;

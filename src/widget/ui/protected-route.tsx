@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }: PropsWithChildren) => {
   const navigate = useNavigate();
 
   useLayoutEffect(() => {
-    if (!token) return navigate("/signin", { replace: true });
+    if (!token) return navigate("/auth", { replace: true });
   }, [token]);
   return <Fragment>{children}</Fragment>;
 };

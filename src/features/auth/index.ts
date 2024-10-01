@@ -4,7 +4,11 @@ export { AuthNavbar } from "./ui/auth-navbar";
 
 const delay = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
 const SignInForm = lazy(async () => {
-  return delay(1000).then(() => import("./ui/signin"));
+  return delay(1000).then(() => import("./ui/form/signin"));
 });
 
-export { AuthLayout, SignInForm };
+const RegistrationForm = lazy(async () => {
+  return delay(1000).then(() => import("./ui/form/registration"));
+});
+
+export { AuthLayout, SignInForm, RegistrationForm };
