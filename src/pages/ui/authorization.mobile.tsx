@@ -9,7 +9,7 @@ const AuthorizationPage = ({}) => {
   const { currentPage } = useContext(AuthNavbarContext);
 
   return (
-    <div className="w-full min-h-screen grid grid-rows-[auto_auto_1fr] justify-items-center overflow-hidden">
+    <div className="w-full min-h-screen grid grid-rows-[auto_auto_1fr] justify-items-center overflow-hidden bg-red-300 dark:bg-dark-color">
       <LogoDeepmode />
       <AuthNavbar />
 
