@@ -14,12 +14,10 @@ const variants = {
   initial: {
     y: "-15px",
     opacity: 0,
-    backgroundColor: "red",
   },
   active: {
     opacity: 1,
     y: 0,
-    backgroundColor: "white",
   },
   inactive: {
     opacity: 0,
