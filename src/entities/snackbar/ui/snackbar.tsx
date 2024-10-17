@@ -42,7 +42,7 @@ const Snackbar = forwardRef(
             transition={{
               duration: autoHideDuration
                 ? autoHideDuration / 1000
-                : TIME_DISPLAY_TOAST / 1000,
+                : 5000 / 1000,
             }}
             style={{
               backgroundColor: COLORS_CONDITION(variant).color,

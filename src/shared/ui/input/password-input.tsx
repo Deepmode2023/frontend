@@ -3,6 +3,7 @@ import InputAdornment from "@mui/material/InputAdornment";
 import { BaseInput, type IBaseInput } from "./base-input";
 import VisibilityIcon from "@mui/icons-material/Visibility";
 import VisibilityOffIcon from "@mui/icons-material/VisibilityOff";
+import { type MotionWrapperPropsType, MotionWrapper } from "../motion-wrapper";
 
 const PasswordInput = (props: IBaseInput<"password">) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,4 +30,15 @@ const PasswordInput = (props: IBaseInput<"password">) => {
   );
 };
 
-export { PasswordInput };
+function PasswordInputWithMotion({
+  variants,
+  ...props
+}: MotionWrapperPropsType & IBaseInput<"password">) {
+  return (
+    <MotionWrapper variants={variants}>
+      <PasswordInput {...props} />
+    </MotionWrapper>
+  );
+}
+
+export { PasswordInput, PasswordInputWithMotion };

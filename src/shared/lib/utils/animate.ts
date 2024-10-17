@@ -1,6 +1,26 @@
+type DirectionAnimateType = "left" | "right" | "random";
+type MeasureAnimateDirectionType = "vh" | "vw" | "%";
+
+function randomDirection() {
+  return Math.round(Math.random()) < 1 ? -1 : 1;
+}
+
+function animationDirection(
+  direction: DirectionAnimateType,
+  measure: MeasureAnimateDirectionType
+) {
+  if (direction !== "random") {
+    return direction === "left" ? `-100${measure}` : `100${measure}`;
+  }
+
+  const r = randomDirection();
+
+  return `${r * 100}${measure}`;
+}
+
 type Milliseconds = number;
 
-export function AnimationFrame(
+function AnimationFrame(
   time: Milliseconds,
   doneCallback: (markTime: number) => void,
   frameCallback?: (markTime: number) => boolean
@@ -34,3 +54,6 @@ export function AnimationFrame(
 
   window.requestAnimationFrame(step);
 }
+
+export { animationDirection, AnimationFrame, randomDirection };
+export type { MeasureAnimateDirectionType, DirectionAnimateType, Milliseconds };
