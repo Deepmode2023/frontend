@@ -1,11 +1,11 @@
 import TextField, { StandardTextFieldProps } from "@mui/material/TextField";
 import { UseFormRegisterReturn, FieldError } from "react-hook-form";
 import { motion, AnimatePresence } from "framer-motion";
+import { type MotionWrapperPropsType, MotionWrapper } from "../motion-wrapper";
 
 export interface IBaseInput<TNameField extends string>
   extends StandardTextFieldProps {
   registerOptions: UseFormRegisterReturn<TNameField>;
-  isRequired?: boolean;
   label: string;
   formError: FieldError | undefined;
 }
@@ -29,7 +29,6 @@ function BaseInput<TNameField extends string>({
   registerOptions,
   label,
   formError,
-  isRequired = false,
   ...inputProps
 }: IBaseInput<TNameField>) {
   return (
@@ -64,4 +63,15 @@ function BaseInput<TNameField extends string>({
   );
 }
 
-export { BaseInput };
+function BaseInputWithMotion<TNameField extends string>({
+  variants,
+  ...props
+}: MotionWrapperPropsType & IBaseInput<TNameField>) {
+  return (
+    <MotionWrapper variants={variants}>
+      <BaseInput {...props} />
+    </MotionWrapper>
+  );
+}
+
+export { BaseInput, BaseInputWithMotion };

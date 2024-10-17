@@ -1,4 +1,4 @@
-import React, { useEffect, useContext, Suspense } from "react";
+import React, { useEffect, useContext, Suspense, lazy } from "react";
 import { LogoDeepmode } from "shared/lib/assets/icons/logo-deepmode";
 import { AuthNavbar, SignInForm, RegistrationForm } from "features/auth";
 import { AuthNavbarContext } from "entities/auth";

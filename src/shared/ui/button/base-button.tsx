@@ -1,6 +1,7 @@
-import { MouseEvent } from "react";
+import { MouseEvent, FC } from "react";
 import Button, { ButtonProps } from "@mui/material/Button";
 import { useAnimate } from "framer-motion";
+import { type MotionWrapperPropsType, MotionWrapper } from "../motion-wrapper";
 
 function BaseButton({ onClick, children, ...props }: ButtonProps) {
   const [scope, animate] = useAnimate();
@@ -31,4 +32,13 @@ function BaseButton({ onClick, children, ...props }: ButtonProps) {
   );
 }
 
-export { BaseButton };
+const BaseButtonWithMotion: FC<MotionWrapperPropsType & ButtonProps> = ({
+  variants,
+  ...props
+}) => (
+  <MotionWrapper variants={variants}>
+    <BaseButton {...props} />
+  </MotionWrapper>
+);
+
+export { BaseButton, BaseButtonWithMotion };
